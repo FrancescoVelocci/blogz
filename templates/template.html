@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+{% for content in contents %}
+    <haeder><h1>{{ content.title }}</h1></haeder>
+    <p>{{ content.body }}</p>
+{% endfor %}
+</article>
+
+{% endblock %}
