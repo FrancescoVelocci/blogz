@@ -1,8 +1,12 @@
 <!doctype html>
 <html>
     <head>
-        <title>Bulid a Blog</title>
+        <title>Blogz</title>
         <style> .error {
+            color: red;
+            font-style: italic;
+        }
+                .flashes {
             color: red;
             font-style: italic;
         }
@@ -10,8 +14,12 @@
     </head>
 <body>
 <nav>
-    <a href="/blog">Main Blog Page</a> | 
-    <a href="/newpost">Add a Blog Entry</a>
+    <a href="/">HOME</a> 
+    <a href="/blog">all posts</a>  
+    <a href="/newpost">new post</a> |     
+    <a href='/login'>login</a>
+    <a href='/logout'>logout</a>
+</nav>
 
     {% block content %}
     {% endblock %}

@@ -3,10 +3,22 @@
 {% block content %}
 
 <article>
+    <haeder><h1>Blogz</h1></haeder>
+
 {% for content in contents %}
     <haeder><h1>{{ content.title }}</h1></haeder>
     <p>{{ content.body }}</p>
+
+    {% for blogger in bloggers %}
+
+        {% if content.owner_id == blogger.id %}
+            <h5>written by <a href="/blog?user={{ blogger.username }}">{{ blogger.username }}</a></h5>
+        {% endif %}
+
+    {% endfor %}
+    
 {% endfor %}
+
 </article>
 
 {% endblock %}

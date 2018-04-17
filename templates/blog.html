@@ -3,13 +3,19 @@
 {% block content %}
 
 <article>
-    <haeder><h1>Build a Blog</h1></haeder>
-    <h1>{{title}}</h1>
-    <h1>{{body}}</h1>
+    <haeder><h1>Blogz</h1></haeder>
 
     {% for entry in entry_list: %}
-        <a href="/blog?id={{ entry.id }}"><h3>{{entry.title}}</h3></a>
-        <p>{{entry.body}}</p>
+        <a href="/blog?id={{ entry.id }}"><h3>{{ entry.title }}</h3></a>
+        <p>{{ entry.body }}</p>
+
+        {% for blogger in bloggers: %}
+
+            {% if entry.owner_id == blogger.id %}
+                    <h5>written by <a href="/blog?user={{ blogger.username }}">{{ blogger.username }}</a></h5>
+            {% endif %}
+
+        {% endfor %}
 
     {% endfor %}
 
